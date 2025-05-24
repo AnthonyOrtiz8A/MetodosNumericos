@@ -1,0 +1,73 @@
+﻿@model List<Calculadora_de_Ecuaciones.Models.SecanteGrupoViewModel>
+
+<h2 class="text-center mt-3">Historial de Operaciones - Método de la Secante</h2>
+
+<div class="container mt-4">
+    <a href="@Url.Action("Index", "Secante")" class="btn btn-primary mb-3">Volver al cálculo</a>
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var grupo in Model)
+        {
+            if (grupo.UsuarioId == Convert.ToInt32(Session["UsuarioId"]))
+            {
+                <div class="card mb-4 shadow-sm p-3">
+                    <h4>Función: <strong>@grupo.Funcion</strong></h4>
+                    <p><strong>Valores iniciales:</strong> x0 = @grupo.X0, x1 = @grupo.X1</p>
+                    <p><strong>Máx. Iteraciones:</strong> @grupo.MaxIter</p>
+                    <p><strong>Tolerancia:</strong> @grupo.Tolerancia.ToString("0.############################")</p>
+                    <p><strong>Fecha:</strong> @grupo.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mt-3">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Iteración</th>
+                                    <th>x0</th>
+                                    <th>x1</th>
+                                    <th>x2</th>
+                                    <th>Error</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var resultado in grupo.Iteraciones)
+                                {
+                                    <tr>
+                                        <td>@resultado.Iteracion</td>
+                                        <td>@resultado.Xi.ToString("F6")</td>
+                                        <td>@resultado.Xi_1.ToString("F6")</td>
+                                        <td>@resultado.XiMas1.ToString("F6")</td>
+                                        <td>@resultado.Error.ToString("F9")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="text-center mt-3">
+                            <a href="@Url.Action("GenerarPDF", "Secante", new { grupoId = grupo.GrupoId })"
+                               class="btn btn-success btn-sm">
+                                Descargar PDF
+                            </a>
+
+                            <a href="@Url.Action("BorrarGrupo", "Secante", new { grupoId = grupo.GrupoId })"
+                               class="btn btn-danger"
+                               onclick="return confirm('¿Estás seguro de que deseas eliminar este grupo?');">
+                                Eliminar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+    else
+    {
+        <div class="alert alert-info text-center">No hay cálculos guardados.</div>
+    }
+</div>
+
+<style>
+    .logo-container img {
+        width: 100px;
+        margin-top: 10px;
+    }
+</style>

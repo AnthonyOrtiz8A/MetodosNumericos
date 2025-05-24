@@ -1,0 +1,84 @@
+﻿@model List<Calculadora_de_Ecuaciones.Models.MullerModel>
+
+<h2 class="text-center mt-3">Historial de Cálculos - Método de Müller</h2>
+
+<div class="container mt-4">
+    <a href="@Url.Action("Index", "Muller")" class="btn btn-primary mb-3">Volver al cálculo</a>
+
+    @if (Model != null && Model.Any())
+    {
+        foreach (var grupo in Model)
+        {
+            <div class="card mb-4 shadow-sm p-3">
+                <h4>Función: <strong>@grupo.Funcion</strong></h4>
+                <p><strong>X0:</strong> @grupo.X0</p>
+                <p><strong>X1:</strong> @grupo.X1</p>
+                <p><strong>X2:</strong> @grupo.X2</p>
+                <p><strong>Máx. Iteraciones:</strong> @grupo.MaxIter</p>
+                <p><strong>Tolerancia:</strong> @Convert.ToDouble(grupo.Tolerancia).ToString("0.############################")</p>
+                <p><strong>Fecha:</strong> @grupo.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                <p><strong>Raíz encontrada:</strong> @(grupo.Root?.ToString("F6") ?? "No disponible")</p>
+
+                @if (grupo.Iteraciones != null && grupo.Iteraciones.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mt-3">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Iteración</th>
+                                    <th>X0</th>
+                                    <th>X1</th>
+                                    <th>X2</th>
+                                    <th>A</th>
+                                    <th>B</th>
+                                    <th>C</th>
+                                    <th>Siguiente X</th>
+                                    <th>Margen de Error</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var resultado in grupo.Iteraciones)
+                                {
+                                    <tr>
+                                        <td>@resultado.Iteracion</td>
+                                        <td>@resultado.X0.ToString("F6")</td>
+                                        <td>@resultado.X1.ToString("F6")</td>
+                                        <td>@resultado.X2.ToString("F6")</td>
+                                        <td>@resultado.A.ToString("F6")</td>
+                                        <td>@resultado.B.ToString("F6")</td>
+                                        <td>@resultado.C.ToString("F6")</td>
+                                        <td>@resultado.NextX.ToString("F6")</td>
+                                        <td>@resultado.MargenError.ToString("F9")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+                <div class="text-center mt-3">
+                    <a href="@Url.Action("GenerarPDF", "Muller", new { grupoId = grupo.GrupoId })"
+                       class="btn btn-success btn-sm">
+                        Descargar PDF
+                    </a>
+                    <a href="@Url.Action("BorrarGrupo", "Muller", new { grupoId = grupo.GrupoId })"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('¿Estás seguro de que deseas eliminar este grupo?');">
+                        Eliminar
+                    </a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="alert alert-info text-center">No hay cálculos guardados.</div>
+    }
+</div>
+
+<style>
+    .logo-container img {
+        width: 100px;
+        margin-top: 10px;
+    }
+</style>

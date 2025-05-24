@@ -1,0 +1,296 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|c:\\users\\anthony\\source\\repos\\calculadora de ecuaciones\\calculadora de ecuaciones\\controllers\\mullercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\controllers\\mullercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\controllers\\newtonraphsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\controllers\\newtonraphsoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\controllers\\secantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\controllers\\secantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\secante\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\secante\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\muller\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\muller\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\newtonraphson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\newtonraphson\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\secante\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\secante\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\models\\secantemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\models\\secantemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\newtonraphson\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\newtonraphson\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\models\\mullermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\models\\mullermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\models\\newtonraphsonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\models\\newtonraphsonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\muller\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\muller\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\calculadora de ecuaciones\\views\\metodos\\metodo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\metodos\\metodo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 265,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-24T14:21:05.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Models\\Login.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\Login.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T14:15:36.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Historial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Historial.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Historial.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Historial.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Historial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-24T02:55:20.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MullerModel.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\MullerModel.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Models\\MullerModel.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\MullerModel.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Models\\MullerModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T02:48:55.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NewtonRaphsonModel.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\NewtonRaphsonModel.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Models\\NewtonRaphsonModel.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\NewtonRaphsonModel.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Models\\NewtonRaphsonModel.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T02:33:48.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NewtonRaphsonController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\NewtonRaphsonController.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\NewtonRaphsonController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\NewtonRaphsonController.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\NewtonRaphsonController.cs",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAswD0BAADdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T02:15:28.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MullerController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\MullerController.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\MullerController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\MullerController.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\MullerController.cs",
+              "ViewState": "AgIAABQBAAAAAAAAAAAowCgBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T01:57:38.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecanteModel.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\SecanteModel.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Models\\SecanteModel.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Models\\SecanteModel.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Models\\SecanteModel.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T01:56:50.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Historial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Muller\\Historial.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Muller\\Historial.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Muller\\Historial.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Muller\\Historial.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-24T01:56:22.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Historial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Secante\\Historial.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Secante\\Historial.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Secante\\Historial.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Secante\\Historial.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-24T01:36:42.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Metodo.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Metodos\\Metodo.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Metodos\\Metodo.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Metodos\\Metodo.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Metodos\\Metodo.cshtml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-24T01:33:58.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T01:08:04.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Index.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Index.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\NewtonRaphson\\Index.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T22:42:46.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Muller\\Index.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Muller\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Muller\\Index.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Muller\\Index.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T22:42:34.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Secante\\Index.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Secante\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Secante\\Index.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Secante\\Index.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAFcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T22:39:46.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SecanteController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\SecanteController.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\SecanteController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\SecanteController.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\SecanteController.cs",
+              "ViewState": "AgIAACUBAAAAAAAAAAAqwDUBAADdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T19:42:21.399Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 74,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

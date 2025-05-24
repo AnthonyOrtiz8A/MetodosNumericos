@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Registrar";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://scontent.fgua6-1.fna.fbcdn.net/v/t39.30808-6/461418062_8132336080227239_2437964220098059134_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=uKs4j8dlHI0Q7kNvwF7rzJE&_nc_oc=AdnDbvqWJIz6F8mF9hhj2_M2k-EwClbhFU1Sp-0eVaRc8Q-JOYBPu7CA_5jx3ZLQgvw&_nc_zt=23&_nc_ht=scontent.fgua6-1.fna&_nc_gid=IOqBIaih71PTgtha9d4qTA&oh=00_AfLChZ1b6ZHL3nA6g-VHkR1UNFyzEYg3-bEQ-ZA_csN-eA&oe=68358A88');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #ffffffee;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+            .login-container h1 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .login-container label {
+                display: block;
+                text-align: left;
+                margin-top: 15px;
+                font-weight: bold;
+                color: #444;
+            }
+
+            .login-container input {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .login-container button {
+            width: 48%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .back-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .login-container button:hover {
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .logo-container img {
+            width: 80px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Proyecto Métodos Numéricos</h1>
+
+        <form method="post" action="/Home/Register">
+            <label for="nombre">Crear Usuario:</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="contrasena">Crear Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required />
+
+            <div class="button-group">
+                <button type="submit" class="register-btn">Registrarse</button>
+                <button type="button" class="back-btn" onclick="window.location.href='/Home/Index';">Volver al inicio</button>
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Facultad de Ingeniería en Sistemas</p>
+            <p>Centro Universitario de Chiquimulilla, Santa Rosa</p>
+            <p>Semestre 1-2025</p>
+        </div>
+
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg/1200px-Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg.png" alt="Escudo UMG">
+        </div>
+    </div>
+</body>
+</html>
