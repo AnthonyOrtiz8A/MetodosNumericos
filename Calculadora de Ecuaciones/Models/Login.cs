@@ -16,5 +16,7 @@ namespace Calculadora_de_Ecuaciones.Models
         public ICollection<IteracionNewton> IteracionNewton { get; set; }
         public ICollection<MullerModel> MullerModels { get; set; }
         public ICollection<IteracionMuller> IteracionMuller { get; set; }
+        public ICollection<GaussSeidelModel> GaussSeidelModels { get; set; }
+        public ICollection<IteracionGaussSeidel> IteracionGaussSeidel { get; set; }
     }
 }

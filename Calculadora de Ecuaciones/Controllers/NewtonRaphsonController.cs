@@ -315,8 +315,8 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 PdfWriter.GetInstance(doc, ms);
                 doc.Open();
 
-                string imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg/1024px-Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg.png";
-                Image logo = Image.GetInstance(new Uri(imageUrl));
+                string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
+                Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
                 logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
                 doc.Add(logo);

@@ -550,6 +550,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GaussSeidelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetodosController.cs" />
     <Compile Include="Controllers\MullerController.cs" />
@@ -558,6 +559,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GaussSeidelModel.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\MullerModel.cs" />
     <Compile Include="Models\NewtonRaphsonModel.cs" />
@@ -581,6 +583,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Fotos\FlorCorado.jpg" />
+    <Content Include="Content\Fotos\KatherineCorado.jpg" />
+    <Content Include="Content\Fotos\Marlon.jpg" />
+    <Content Include="Content\Fotos\Umg.png" />
+    <Content Include="Content\Fotos\Yarissa.jpg" />
+    <Content Include="Content\Fotos\Yo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -625,6 +633,8 @@
     <Content Include="Views\NewtonRaphson\Historial.cshtml" />
     <Content Include="Views\Muller\Index.cshtml" />
     <Content Include="Views\Muller\Historial.cshtml" />
+    <Content Include="Views\GaussSeidel\Index.cshtml" />
+    <Content Include="Views\GaussSeidel\Historial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

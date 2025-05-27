@@ -1,0 +1,144 @@
+﻿@model Calculadora_de_Ecuaciones.Models.GaussSeidelModel
+
+<h2 class="text-center mt-4 mb-4">Método de Gauss–Seidel</h2>
+
+<div class="container">
+    <div class="card shadow-lg border-0 rounded-4 p-4 bg-light">
+
+        @using (Html.BeginForm("Index", "GaussSeidel", FormMethod.Get))
+        {
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Tamaño del sistema (n):</label>
+                <div class="input-group">
+                    <input type="number" name="n" class="form-control form-control-lg" min="2" value="@Model.Dimension" />
+                    <button type="submit" class="btn btn-outline-secondary btn-lg">Generar Matriz</button>
+                </div>
+            </div>
+        }
+
+        @if (Model.Dimension > 0)
+        {
+             using (Html.BeginForm("Calculate", "GaussSeidel", FormMethod.Post))
+            {
+                @Html.HiddenFor(m => m.Dimension)
+
+                <h4 class="mt-4 mb-3 fw-bold">Sistema de ecuaciones</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center align-middle">
+                        <thead class="table-secondary">
+                            <tr>
+                                @for (int j = 0; j < Model.Dimension; j++)
+                                {
+                                    <th>A[, @j+1]</th>
+                                }
+                                <th><strong>b</strong></th>
+                                <th><strong>x₀</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Dimension; i++)
+                            {
+                                <tr>
+                                    @for (int j = 0; j < Model.Dimension; j++)
+                                    {
+                                        <td>
+                                            <input name="MatrizInput[@i][@j]" class="form-control" value="@Model.MatrizInput[i][j]" />
+                                        </td>
+                                    }
+                                    <td>
+                                        <input name="VectorBInput[@i]" class="form-control" value="@Model.VectorBInput[i]" />
+                                    </td>
+                                    <td>
+                                        <input name="AproximacionInicialInput[@i]" class="form-control" value="@Model.AproximacionInicialInput[i]" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Tolerancia:</label>
+                        @Html.TextBoxFor(m => m.Tolerancia, new { @class = "form-control form-control-lg", placeholder = "Ej: 0.000001", step = "any" })
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">Máx. Iteraciones:</label>
+                        @Html.TextBoxFor(m => m.MaxIteraciones, new { @class = "form-control form-control-lg", value = "100" })
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-outline-primary btn-lg">Calcular</button>
+                    <a href="@Url.Action("Historial", "GaussSeidel")" class="btn btn-outline-secondary btn-lg">Ver historial</a>
+                </div>
+            }
+
+             if (!string.IsNullOrEmpty(Model.Mensaje))
+            {
+                <div class="alert @(Model.TipoMensaje == "error" ? "alert-danger" : "alert-warning") mt-4 text-center">
+                    <strong>@Model.Mensaje</strong>
+                </div>
+            }
+
+            if (Model.Iteraciones != null && Model.Iteraciones.Any())
+            {
+                <h4 class="mt-5 text-center">Iteraciones</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered mt-3 text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Iteración</th>
+                                @for (int i = 0; i < Model.Dimension; i++)
+                                {
+                                    <th>x<sub>@i</sub></th>
+                                }
+                                <th>Error</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var iter in Model.Iteraciones)
+                            {
+                                <tr>
+                                    <td>@iter.Iteracion</td>
+                                    @foreach (var val in iter.Valores)
+                                    {
+                                        <td>@val.ToString("F6")</td>
+                                    }
+                                    <td>@iter.Error.ToString("F9")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-success text-center mt-4 rounded-3">
+                    <p><strong>Solución Aproximada:</strong></p>
+                    <p>
+                        @{
+                            var solucion = Model.Solucion;
+                            for (int i = 0; i < solucion.Length; i++)
+                            {
+                                <text>x<sub>@i</sub> = @solucion[i].ToString("F6")</text>
+                                if (i < solucion.Length - 1)
+                                {
+                                    <text>, </text>
+                                }
+                            }
+                        }
+                    </p>
+                    <p><strong>Total de iteraciones:</strong> @Model.Iteraciones.Count</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+<style>
+    .logo-container img {
+        width: 100px;
+        margin-top: 10px;
+    }
+</style>

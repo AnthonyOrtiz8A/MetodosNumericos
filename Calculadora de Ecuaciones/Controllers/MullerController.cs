@@ -290,11 +290,12 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
                 doc.Open();
 
-                string imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg/1024px-Escudo_de_la_universidad_Mariano_G%C3%A1lvez_Guatemala.svg.png";
-                Image logo = Image.GetInstance(new Uri(imageUrl));
+                string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
+                Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
                 logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
                 doc.Add(logo);
+
 
                 Paragraph titulo = new Paragraph("Reporte de Método de Müller", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
                 titulo.Alignment = Element.ALIGN_CENTER;
