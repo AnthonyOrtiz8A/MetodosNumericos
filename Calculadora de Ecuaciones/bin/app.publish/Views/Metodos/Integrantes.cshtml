@@ -1,0 +1,240 @@
+﻿@{
+    ViewBag.Title = "Integrantes - Métodos Numéricos 2025";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+            text-align: center;
+            background: url('/Content/Fotos/Fondoparatodos.jpg');
+            background-size: 180%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .content {
+            margin-top: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: white; 
+            text-shadow: 1px 1px 3px black;
+        }
+
+
+        table {
+            width: 95%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            font-size: 18px;
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+            text-align: left;
+            word-break: break-word;
+        }
+
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        td ul {
+            list-style-type: "🔹 ";
+            padding-left: 20px;
+            margin: 0;
+        }
+
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .logo-container img {
+            width: 90px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #666;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+            .footer .logo-container img {
+                width: 100px;
+                margin-top: 10px;
+                transition: transform 0.3s;
+            }
+
+                .footer .logo-container img:hover {
+                    transform: scale(1.1);
+                }
+
+        .foto-col {
+            width: 140px;
+        }
+
+        .carnet-col {
+            width: 160px;
+            text-align: center;
+        }
+
+        .nombre-col {
+            width: 220px;
+            text-align: center;
+        }
+
+        .rol-col {
+            width: 160px;
+            min-width: 140px;
+            max-width: 180px;
+            text-align: center;
+        }
+
+
+        .aportes-col {
+            width: auto;
+            min-width: 300px;
+            word-break: break-word;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Grupo #2</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th class="foto-col">Foto</th>
+                    <th class="carnet-col">Carnet</th>
+                    <th class="nombre-col">Nombres</th>
+                    <th class="rol-col">Rol</th>
+                    <th class="aportes-col">Aportes</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <div style="margin-right: 30px;">
+                            <img src="~/Content/Fotos/Yo.jpg" alt="Anthony" style="height: 150px;  border-radius: 15px;" />
+                        </div>
+                    </td>
+                    <td>1790-23-3899</td>
+                    <td>Anthony Obed Ortiz Ochoa</td>
+                    <td>Desarrollador</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creación de página de iniciar sesión y crear usuario</li>
+                            <li>Creación de Controladores, Modelos y Vistas</li>
+                            <li>Creación de Base de Datos y su Conexión</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="margin-right: 30px;">
+                            <img src="~/Content/Fotos/Yarissa.jpg" alt="Yarissa" style="height: 150px; border-radius: 15px;"   />
+                        </div>
+                    </td>
+                    <td>1790-23-1812</td>
+                    <td>Yarissa Alexandra Hernandez Mijangos</td>
+                    <td>Desarrolladora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creación de página de iniciar sesión y crear usuario</li>
+                            <li>Creación de Controladores, Modelos y Vistas</li>
+                            <li>Creación de Base de Datos y su Conexión</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="margin-right: 30px;">
+                            <img src="~/Content/Fotos/KatherineCorado.jpg" alt="Katherine" style="height: 150px; border-radius: 15px;"   />
+                        </div>
+                    </td>
+                    <td>1790-23-13720</td>
+                    <td>Katherinne Patricia Corado</td>
+                    <td>Documentadora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creacion del Informe Escrito </li>
+                            <li>Creacion del Manual Tecnico</li>
+                        </ul>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="margin-right: 30px;">
+                            <img src="~/Content/Fotos/FlorCorado.jpg" alt="Flor" style="height: 150px; border-radius: 15px;"   />
+                        </div>
+                    </td>
+                    <td>1790-23-13545</td>
+                    <td>Ángeles Flor de María Corado</td>
+                    <td>Documentadora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Manual de Usuario</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="margin-right: 30px;">
+                            <img src="~/Content/Fotos/Marlon.jpg" alt="Marlon" style="height: 150px; border-radius: 15px;"   />
+                        </div>
+                    </td>
+                    <td>1790-23-21472</td>
+                    <td>Marlon Alfredo Álvarez Quinteros</td>
+                    <td>Documentador</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Investigacion de los Metodos para el Informe</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Facultad de Ingeniería en Sistemas</p>
+        <p>Centro Universitario de Chiquimulilla, Santa Rosa</p>
+        <p>Semestre 1-2025</p>
+        <div style="margin-right: 30px;">
+            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;"   />
+        </div>
+    </div>
+
+</body>
+</html>

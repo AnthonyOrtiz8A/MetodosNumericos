@@ -104,6 +104,15 @@
         <h1>Proyecto Métodos Numéricos</h1>
 
         <form method="post" action="/Home/Register">
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+
+
             <label for="nombre">Crear Usuario:</label>
             <input type="text" id="nombre" name="nombre" required />
 
@@ -123,8 +132,11 @@
         </div>
 
         <div style="margin-right: 30px;">
-            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;"   />
+            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;" />
         </div>
     </div>
 </body>
 </html>
+
+
+

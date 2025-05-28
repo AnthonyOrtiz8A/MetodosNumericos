@@ -86,17 +86,32 @@ namespace Calculadora_de_Ecuaciones.Controllers
         {
             try
             {
-                string hashedPassword = Seguridad.HashPassword(contrasena);
-
                 using (SQLiteConnection conn = new SQLiteConnection(GetConnectionString()))
                 {
                     conn.Open();
-                    string query = "INSERT INTO LoginBaseDatos (Nombre, Contrasena) VALUES (@Nombre, @Contrasena)";
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+
+                    // Verificar si el nombre de usuario ya existe
+                    string checkQuery = "SELECT COUNT(*) FROM LoginBaseDatos WHERE Nombre = @Nombre";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Nombre", nombre);
-                        cmd.Parameters.AddWithValue("@Contrasena", hashedPassword);
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                        checkCmd.Parameters.AddWithValue("@Nombre", nombre);
+                        long count = (long)checkCmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            ViewBag.ErrorMessage = "El nombre de usuario ya está registrado. Por favor, elige otro.";
+                            return View("Contact");
+                        }
+                    }
+
+                    // Si no existe, proceder al registro
+                    string hashedPassword = Seguridad.HashPassword(contrasena);
+                    string insertQuery = "INSERT INTO LoginBaseDatos (Nombre, Contrasena) VALUES (@Nombre, @Contrasena)";
+                    using (SQLiteCommand insertCmd = new SQLiteCommand(insertQuery, conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("@Nombre", nombre);
+                        insertCmd.Parameters.AddWithValue("@Contrasena", hashedPassword);
+                        int rowsAffected = insertCmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
@@ -116,6 +131,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return View("Contact");
             }
         }
+
 
 
         [HttpPost]

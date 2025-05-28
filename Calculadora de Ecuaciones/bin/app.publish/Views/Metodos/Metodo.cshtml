@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Métodos Numéricos - Solución de Ecuaciones";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+            background: url('/Content/Fotos/Fondoparatodos.jpg');
+            background-size: 115%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 30%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+            .sidebar h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #007BFF;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sidebar li {
+                margin-bottom: 10px;
+            }
+
+                .sidebar li a {
+                    text-decoration: none;
+                    color: #333;
+                    padding: 10px;
+                    display: block;
+                    border-radius: 5px;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+
+                    .sidebar li a:hover {
+                        background-color: #007BFF;
+                        color: white;
+                    }
+
+        .content {
+            width: 65%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .content h1 {
+                font-size: 1.8em;
+                color: #007BFF;
+            }
+
+        .footer {
+            width: 30%;
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .logo-container img {
+            width: 100px;
+            margin-top: 15px;
+            transition: transform 0.3s;
+        }
+
+            .logo-container img:hover {
+                transform: scale(1.1);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Métodos Numéricos</h2>
+            <ul>
+                <li><a href="@Url.Action("Index", "NewtonRaphson")">Método de Newton Raphson</a></li>
+                <li><a href="@Url.Action("Index", "Secante")">Método de la Secante</a></li>
+                <li><a href="@Url.Action("Index", "Muller")">Método de Müller</a></li>
+                <li><a href="@Url.Action("Index", "GaussSeidel")">Método de Gauss Seidel</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1 id="title">Seleccione un método en el menú lateral para iniciar el cálculo.</h1>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Facultad de Ingeniería en Sistemas</p>
+        <p>Centro Universitario de Chiquimulilla, Santa Rosa</p>
+        <p>Semestre 1-2025</p>
+        <div style="margin-right: 30px;">
+            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;"   />
+        </div>
+    </div>
+
+</body>
+</html>

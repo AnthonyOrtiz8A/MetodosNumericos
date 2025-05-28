@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        .navbar-brand {
+            color: white;
+            padding: 25px;
+            text-decoration: none;
+            font-size: 15px; 
+        }
+
+            .navbar-brand.active {
+                background-color: #007BFF;
+                border-radius: 20px;
+            }
+
+        .logo-container img {
+            height: auto;
+            width: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div style="margin-right: 30px;">
+            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;"   />
+        </div>
+        <div class="container">
+            @Html.ActionLink("Inicio", "Index", "Metodos", new { area = "" }, new { @class = ViewBag.ActivePage == "Inicio" ? "navbar-brand active" : "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-nav">
+                    @Html.ActionLink("Metodos", "Metodo", "Metodos", new { area = "" }, new { @class = ViewBag.ActivePage == "Metodos" ? "navbar-brand active" : "navbar-brand" })
+                    @Html.ActionLink("Integrantes", "Integrantes", "Metodos", new { area = "" }, new { @class = ViewBag.ActivePage == "Integrantes" ? "navbar-brand active" : "navbar-brand" })
+                    @Html.ActionLink("Acerca de", "AcercaDe", "Metodos", new { area = "" }, new { @class = ViewBag.ActivePage == "Acerca" ? "navbar-brand active" : "navbar-brand" })
+                </div>
+                <div class="ms-auto">
+                    @Html.ActionLink("Cerrar Sesión", "Index", "Home", new { area = "" }, new { @class = ViewBag.ActivePage })
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

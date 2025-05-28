@@ -1,0 +1,130 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Registrar";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('/Content/Fotos/Mario.gif');
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #ffffffee;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+            .login-container h1 {
+                margin-bottom: 20px;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .login-container label {
+                display: block;
+                text-align: left;
+                margin-top: 15px;
+                font-weight: bold;
+                color: #444;
+            }
+
+            .login-container input {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .login-container button {
+            width: 48%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .back-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .login-container button:hover {
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .logo-container img {
+            width: 80px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Proyecto Métodos Numéricos</h1>
+
+        <form method="post" action="/Home/Register">
+            <label for="nombre">Crear Usuario:</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="contrasena">Crear Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required />
+
+            <div class="button-group">
+                <button type="submit" class="register-btn">Registrarse</button>
+                <button type="button" class="back-btn" onclick="window.location.href='/Home/Index';">Volver al inicio</button>
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Facultad de Ingeniería en Sistemas</p>
+            <p>Centro Universitario de Chiquimulilla, Santa Rosa</p>
+            <p>Semestre 1-2025</p>
+        </div>
+
+        <div style="margin-right: 30px;">
+            <img src="~/Content/Fotos/Umg.png" alt="Logo UMG" style="height: 100px;"   />
+        </div>
+    </div>
+</body>
+</html>

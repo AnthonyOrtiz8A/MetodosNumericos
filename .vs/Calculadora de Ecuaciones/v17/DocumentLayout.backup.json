@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|c:\\users\\anthony\\source\\repos\\calculadora de ecuaciones\\calculadora de ecuaciones\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|c:\\users\\anthony\\source\\repos\\calculadora de ecuaciones\\calculadora de ecuaciones\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|c:\\users\\anthony\\source\\repos\\calculadora de ecuaciones\\calculadora de ecuaciones\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C0C592D-CB20-4188-8748-3FDD9AFB5B4E}|Calculadora de Ecuaciones\\Calculadora de Ecuaciones.csproj|solutionrelative:calculadora de ecuaciones\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -13,20 +21,33 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 265,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 306,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T23:28:43.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T21:04:17.404Z",
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T23:20:26.556Z",
               "EditorCaption": ""
             },
             {
@@ -36,11 +57,24 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Anthony\\source\\repos\\Calculadora de Ecuaciones\\Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Calculadora de Ecuaciones\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAAwIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T21:04:17.404Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 74,
+          "DockedHeight": 106,
           "SelectedChildIndex": -1,
           "Children": [
             {
