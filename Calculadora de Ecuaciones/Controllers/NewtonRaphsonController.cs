@@ -240,7 +240,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return RedirectToAction("Historial");
             }
         }
-
         public ActionResult GenerarPDF(int grupoId)
         {
             NewtonRaphsonModel grupo = null;
@@ -250,9 +249,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 conn.Open();
 
                 string queryGrupo = @"
-            SELECT GrupoId, Funcion, X0, MaxIter, Tolerancia, Fecha 
-            FROM NewtonRaphsonGrupo 
-            WHERE GrupoId = @GrupoId";
+SELECT GrupoId, Funcion, X0, MaxIter, Tolerancia, Fecha 
+FROM NewtonRaphsonGrupo 
+WHERE GrupoId = @GrupoId";
 
                 using (SQLiteCommand cmdGrupo = new SQLiteCommand(queryGrupo, conn))
                 {
@@ -279,10 +278,10 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     return Content("No hay operaciones recientes para generar el PDF.");
 
                 string queryResultados = @"
-            SELECT Iteracion, X, FX, DFX, NextX, MargenError 
-            FROM NewtonRaphsonResultados 
-            WHERE GrupoId = @GrupoId 
-            ORDER BY Iteracion ASC";
+SELECT Iteracion, X, FX, DFX, NextX, MargenError 
+FROM NewtonRaphsonResultados 
+WHERE GrupoId = @GrupoId 
+ORDER BY Iteracion ASC";
 
                 using (SQLiteCommand cmdResultados = new SQLiteCommand(queryResultados, conn))
                 {
@@ -311,20 +310,37 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
             using (MemoryStream ms = new MemoryStream())
             {
-                Document doc = new Document(PageSize.A4, 40, 40, 80, 40);
+                Document doc = new Document(PageSize.A4, 40, 40, 30, 40);
                 PdfWriter.GetInstance(doc, ms);
                 doc.Open();
 
                 string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
-                logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
-                doc.Add(logo);
 
-                Paragraph titulo = new Paragraph("Reporte de Método de Newton-Raphson", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
-                titulo.Alignment = Element.ALIGN_CENTER;
-                titulo.SpacingAfter = 20f;
-                doc.Add(titulo);
+                // Tabla de encabezado
+                PdfPTable headerTable = new PdfPTable(2);
+                headerTable.WidthPercentage = 100;
+                headerTable.SetWidths(new float[] { 1.3f, 3.7f }); 
+
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.Border = Rectangle.NO_BORDER;
+                logoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                headerTable.AddCell(logoCell);
+
+                PdfPCell titleCell = new PdfPCell();
+                titleCell.Border = Rectangle.NO_BORDER;
+                titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                titleCell.PaddingLeft = -100f; 
+                Paragraph title = new Paragraph("Reporte de Método de Newton-Raphson", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
+                title.Alignment = Element.ALIGN_CENTER;
+
+                titleCell.AddElement(title);
+                headerTable.AddCell(titleCell);
+
+                doc.Add(headerTable);
+                doc.Add(new Paragraph("\n"));
 
                 doc.Add(new Paragraph($"Función: {grupo.Funcion}", FontFactory.GetFont("Arial", 12)));
                 doc.Add(new Paragraph($"Valor inicial: X₀={grupo.X0}", FontFactory.GetFont("Arial", 12)));
@@ -362,6 +378,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return File(ms.ToArray(), "application/pdf", $"Ultima_Operacion_Newton_{grupo.GrupoId}.pdf");
             }
         }
+
 
         private double EvaluarFuncion(string funcion, double x)
         {

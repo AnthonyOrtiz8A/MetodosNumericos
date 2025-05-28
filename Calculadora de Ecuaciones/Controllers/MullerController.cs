@@ -85,7 +85,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                         cmdGrupo.Parameters.AddWithValue("@X1", model.X1);
                         cmdGrupo.Parameters.AddWithValue("@X2", model.X2);
                         cmdGrupo.Parameters.AddWithValue("@MaxIter", model.MaxIter);
-                        cmdGrupo.Parameters.AddWithValue("@Tolerancia", model.Tolerancia.ToString("0.############################")); // ✅ Siempre en decimales
+                        cmdGrupo.Parameters.AddWithValue("@Tolerancia", model.Tolerancia.ToString("0.############################")); 
                         cmdGrupo.Parameters.AddWithValue("@UsuarioId", usuarioId);
                         cmdGrupo.Parameters.AddWithValue("@Fecha", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         grupoId = Convert.ToInt32(cmdGrupo.ExecuteScalar());
@@ -221,9 +221,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 conn.Open();
 
                 string queryGrupo = @"
-            SELECT GrupoId, Funcion, X0, X1, X2, MaxIter, Tolerancia, Fecha 
-            FROM MullerGrupo 
-            WHERE GrupoId = @GrupoId";
+        SELECT GrupoId, Funcion, X0, X1, X2, MaxIter, Tolerancia, Fecha 
+        FROM MullerGrupo 
+        WHERE GrupoId = @GrupoId";
 
                 using (SQLiteCommand cmdGrupo = new SQLiteCommand(queryGrupo, conn))
                 {
@@ -251,10 +251,10 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     return Content("No hay operaciones recientes para generar el PDF.");
 
                 string queryIteraciones = @"
-            SELECT Iteracion, X0, X1, X2, A, B, C, NextX, MargenError 
-            FROM MullerResultados 
-            WHERE GrupoId = @GrupoId 
-            ORDER BY Iteracion ASC";
+        SELECT Iteracion, X0, X1, X2, A, B, C, NextX, MargenError 
+        FROM MullerResultados 
+        WHERE GrupoId = @GrupoId 
+        ORDER BY Iteracion ASC";
 
                 using (SQLiteCommand cmdIteraciones = new SQLiteCommand(queryIteraciones, conn))
                 {
@@ -285,7 +285,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
             using (MemoryStream ms = new MemoryStream())
             {
-                Document doc = new Document(PageSize.A4, 40, 40, 80, 40);
+                Document doc = new Document(PageSize.A4.Rotate(), 40, 40, 40, 40);
                 PdfWriter writer = PdfWriter.GetInstance(doc, ms);
 
                 doc.Open();
@@ -293,14 +293,29 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
-                logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
-                doc.Add(logo);
 
+                PdfPTable headerTable = new PdfPTable(2);
+                headerTable.WidthPercentage = 100;
+                headerTable.SetWidths(new float[] { 1.5f, 3.5f });
 
-                Paragraph titulo = new Paragraph("Reporte de Método de Müller", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
-                titulo.Alignment = Element.ALIGN_CENTER;
-                titulo.SpacingAfter = 20f;
-                doc.Add(titulo);
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.Border = Rectangle.NO_BORDER;
+                logoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                headerTable.AddCell(logoCell);
+
+                PdfPCell titleCell = new PdfPCell();
+                titleCell.Border = Rectangle.NO_BORDER;
+                titleCell.HorizontalAlignment = Element.ALIGN_LEFT; 
+                titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                titleCell.PaddingLeft = 30f; 
+
+                Paragraph title = new Paragraph("Reporte de Método de Müller", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
+                titleCell.AddElement(title);
+                headerTable.AddCell(titleCell);
+
+                doc.Add(headerTable);
+                doc.Add(new Paragraph("\n"));
 
                 doc.Add(new Paragraph($"Función: {grupo.Funcion}", FontFactory.GetFont("Arial", 12)));
                 doc.Add(new Paragraph($"Valores iniciales: x0 = {grupo.X0}, x1 = {grupo.X1}, x2 = {grupo.X2}", FontFactory.GetFont("Arial", 12)));
@@ -340,6 +355,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return File(ms.ToArray(), "application/pdf", $"Ultima_Operacion_Muller_{grupo.GrupoId}.pdf");
             }
         }
+
 
         public ActionResult BorrarGrupo(int grupoId)
         {

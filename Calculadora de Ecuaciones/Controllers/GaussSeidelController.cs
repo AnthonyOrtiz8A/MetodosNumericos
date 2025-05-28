@@ -274,9 +274,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 conn.Open();
 
                 string queryGrupo = @"
-            SELECT Id, Dimension, Tolerancia, MaxIteraciones, Fecha 
-            FROM GaussSeidelGrupo 
-            WHERE Id = @GrupoId";
+        SELECT Id, Dimension, Tolerancia, MaxIteraciones, Fecha 
+        FROM GaussSeidelGrupo 
+        WHERE Id = @GrupoId";
 
                 using (SQLiteCommand cmdGrupo = new SQLiteCommand(queryGrupo, conn))
                 {
@@ -308,10 +308,10 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     return Content("No se encontró el grupo para generar el PDF.");
 
                 string queryIteraciones = @"
-            SELECT Iteracion, Valores, Error 
-            FROM GaussSeidelResultados 
-            WHERE GrupoId = @GrupoId 
-            ORDER BY Iteracion ASC";
+        SELECT Iteracion, Valores, Error 
+        FROM GaussSeidelResultados 
+        WHERE GrupoId = @GrupoId 
+        ORDER BY Iteracion ASC";
 
                 using (SQLiteCommand cmdIteraciones = new SQLiteCommand(queryIteraciones, conn))
                 {
@@ -342,21 +342,38 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
             using (MemoryStream ms = new MemoryStream())
             {
-                Document doc = new Document(PageSize.A4, 40, 40, 80, 40);
-                PdfWriter writer = PdfWriter.GetInstance(doc, ms);
-
+                Document doc = new Document(PageSize.A4, 40, 40, 30, 40);
+                PdfWriter.GetInstance(doc, ms);
                 doc.Open();
 
                 string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
-                logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
-                doc.Add(logo);
+
+                // Tabla de encabezado con logo y título en paralelo
+                PdfPTable headerTable = new PdfPTable(2);
+                headerTable.WidthPercentage = 100;
+                headerTable.SetWidths(new float[] { 1.3f, 3.7f }); // Ajuste para mover el título a la izquierda
+
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.Border = Rectangle.NO_BORDER;
+                logoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                headerTable.AddCell(logoCell);
+
+                PdfPCell titleCell = new PdfPCell();
+                titleCell.Border = Rectangle.NO_BORDER;
+                titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                titleCell.PaddingLeft = -100f;
 
                 Paragraph titulo = new Paragraph("Reporte de Método de Gauss-Seidel", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
                 titulo.Alignment = Element.ALIGN_CENTER;
-                titulo.SpacingAfter = 20f;
-                doc.Add(titulo);
+
+                titleCell.AddElement(titulo);
+                headerTable.AddCell(titleCell);
+
+                doc.Add(headerTable);
+                doc.Add(new Paragraph("\n"));
 
                 doc.Add(new Paragraph($"Dimensión del sistema: {grupo.Dimension}", FontFactory.GetFont("Arial", 12)));
                 doc.Add(new Paragraph($"Máx. Iteraciones: {grupo.MaxIteraciones}, Tolerancia: {grupo.Tolerancia.ToString("0.#####################")}", FontFactory.GetFont("Arial", 12)));
@@ -402,6 +419,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return File(ms.ToArray(), "application/pdf", $"GaussSeidel_Grupo_{grupo.GrupoId}.pdf");
             }
         }
+
 
         public ActionResult BorrarGrupo(int grupoId)
         {

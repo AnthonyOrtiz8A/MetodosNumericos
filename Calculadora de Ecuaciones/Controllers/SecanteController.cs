@@ -231,7 +231,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
             TempData["Mensaje"] = $"Grupo {grupoId} eliminado correctamente.";
             return RedirectToAction("Historial");
         }
-
         public ActionResult GenerarPDF(int grupoId)
         {
             SecanteGrupoViewModel grupo = null;
@@ -241,9 +240,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 conn.Open();
 
                 string queryGrupo = @"
-            SELECT GrupoId, Funcion, X0, X1, Fecha, MaxIter, Tolerancia
-            FROM SecanteGrupo 
-            WHERE GrupoId = @GrupoId";
+        SELECT GrupoId, Funcion, X0, X1, Fecha, MaxIter, Tolerancia
+        FROM SecanteGrupo 
+        WHERE GrupoId = @GrupoId";
 
                 using (SQLiteCommand cmdGrupo = new SQLiteCommand(queryGrupo, conn))
                 {
@@ -271,10 +270,10 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     return Content("No hay operaciones recientes para generar el PDF.");
 
                 string queryResultados = @"
-            SELECT Iteracion, Xi, Xi_1, XiMas1, Error 
-            FROM SecanteResultados 
-            WHERE GrupoId = @GrupoId 
-            ORDER BY Iteracion ASC";
+        SELECT Iteracion, Xi, Xi_1, XiMas1, Error 
+        FROM SecanteResultados 
+        WHERE GrupoId = @GrupoId 
+        ORDER BY Iteracion ASC";
 
                 using (SQLiteCommand cmdResultados = new SQLiteCommand(queryResultados, conn))
                 {
@@ -302,22 +301,38 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
             using (MemoryStream ms = new MemoryStream())
             {
-                Document doc = new Document(PageSize.A4, 40, 40, 80, 40);
-                PdfWriter writer = PdfWriter.GetInstance(doc, ms);
-
+                Document doc = new Document(PageSize.A4, 40, 40, 30, 40);
+                PdfWriter.GetInstance(doc, ms);
                 doc.Open();
 
                 string imagePath = Server.MapPath("~/Content/Fotos/Umg.png");
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
-                logo.SetAbsolutePosition(doc.LeftMargin, doc.PageSize.Height - 70);
-                doc.Add(logo);
 
+                // Tabla de encabezado con logo y título en paralelo
+                PdfPTable headerTable = new PdfPTable(2);
+                headerTable.WidthPercentage = 100;
+                headerTable.SetWidths(new float[] { 1.3f, 3.7f }); 
+
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.Border = Rectangle.NO_BORDER;
+                logoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                headerTable.AddCell(logoCell);
+
+                PdfPCell titleCell = new PdfPCell();
+                titleCell.Border = Rectangle.NO_BORDER;
+                titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                titleCell.PaddingLeft = -100f; 
 
                 Paragraph titulo = new Paragraph("Reporte de Método de la Secante", new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
                 titulo.Alignment = Element.ALIGN_CENTER;
-                titulo.SpacingAfter = 20f;
-                doc.Add(titulo);
+
+                titleCell.AddElement(titulo);
+                headerTable.AddCell(titleCell);
+
+                doc.Add(headerTable);
+                doc.Add(new Paragraph("\n"));
 
                 doc.Add(new Paragraph($"Función: {grupo.Funcion}", FontFactory.GetFont("Arial", 12)));
                 doc.Add(new Paragraph($"Valores iniciales: x0 = {grupo.X0}, x1 = {grupo.X1}", FontFactory.GetFont("Arial", 12)));
@@ -354,6 +369,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 return File(ms.ToArray(), "application/pdf", $"Ultima_Operacion_Secante_{grupo.GrupoId}.pdf");
             }
         }
+
 
 
 

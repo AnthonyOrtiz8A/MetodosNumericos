@@ -13,17 +13,17 @@
         {
             <div class="mb-4">
                 <label class="form-label fw-semibold">Función f(x):</label>
-                @Html.TextBoxFor(m => m.Funcion, new { @class = "form-control form-control-lg", @placeholder = "Ej: x^3 - x - 2" })
+                @Html.TextBoxFor(m => m.Funcion, new { @class = "form-control form-control-lg", @placeholder = "Ej: x^3 - x - 2", required = "required" })
             </div>
 
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label class="form-label fw-semibold">Valor inicial (x₀):</label>
-                    @Html.TextBoxFor(m => m.X0, new { @class = "form-control form-control-lg", type = "number", step = "any", min = "0" })
+                    @Html.TextBoxFor(m => m.X0, new { @class = "form-control form-control-lg", type = "number", step = "any", min = "0", })
                 </div>
                 <div class="col-md-6 mb-4">
                     <label class="form-label fw-semibold">Número máximo de iteraciones:</label>
-                    @Html.TextBoxFor(m => m.MaxIter, new { @class = "form-control form-control-lg", type = "number", value = "100", required = "required" })
+                    @Html.TextBoxFor(m => m.MaxIter, new { @class = "form-control form-control-lg", type = "number", value = "100", min = "1", required = "required" })
                 </div>
             </div>
 

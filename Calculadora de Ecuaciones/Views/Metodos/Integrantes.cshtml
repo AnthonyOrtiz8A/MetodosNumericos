@@ -29,7 +29,7 @@
         }
 
         table {
-            width: 85%;
+            width: 95%;
             margin: 30px auto;
             border-collapse: collapse;
             background: white;
@@ -42,12 +42,22 @@
             font-size: 18px;
             padding: 14px;
             border-bottom: 1px solid #ddd;
+            vertical-align: top;
+            text-align: left;
+            word-break: break-word;
         }
+
 
         th {
             background-color: #007BFF;
             color: white;
         }
+        td ul {
+            list-style-type: "🔹 ";
+            padding-left: 20px;
+            margin: 0;
+        }
+
 
         tr:hover {
             background-color: #f1f1f1;
@@ -77,6 +87,36 @@
                 .footer .logo-container img:hover {
                     transform: scale(1.1);
                 }
+
+        .foto-col {
+            width: 140px;
+        }
+
+        .carnet-col {
+            width: 160px;
+            text-align: center;
+        }
+
+        .nombre-col {
+            width: 220px;
+            text-align: center;
+        }
+
+        .rol-col {
+            width: 160px;
+            min-width: 140px;
+            max-width: 180px;
+            text-align: center;
+        }
+
+
+        .aportes-col {
+            width: auto;
+            min-width: 300px;
+            word-break: break-word;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -87,12 +127,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>Foto</th>
-                    <th>Carnet</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
+                    <th class="foto-col">Foto</th>
+                    <th class="carnet-col">Carnet</th>
+                    <th class="nombre-col">Nombres</th>
+                    <th class="rol-col">Rol</th>
+                    <th class="aportes-col">Aportes</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>
@@ -101,8 +143,15 @@
                         </div>
                     </td>
                     <td>1790-23-3899</td>
-                    <td>Anthony Obed</td>
-                    <td>Ortiz Ochoa</td>
+                    <td>Anthony Obed Ortiz Ochoa</td>
+                    <td>Desarrollador</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creación de página de iniciar sesión y crear usuario</li>
+                            <li>Creación de Controladores, Modelos y Vistas</li>
+                            <li>Creación de Base de Datos y su Conexión</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -111,8 +160,15 @@
                         </div>
                     </td>
                     <td>1790-23-1812</td>
-                    <td>Yarissa Alexandra</td>
-                    <td>Hernandez Mijangos</td>
+                    <td>Yarissa Alexandra Hernandez Mijangos</td>
+                    <td>Desarrolladora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creación de página de iniciar sesión y crear usuario</li>
+                            <li>Creación de Controladores, Modelos y Vistas</li>
+                            <li>Creación de Base de Datos y su Conexión</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -121,8 +177,15 @@
                         </div>
                     </td>
                     <td>1790-23-13720</td>
-                    <td>Katherinne Patricia</td>
-                    <td>Corado</td>
+                    <td>Katherinne Patricia Corado</td>
+                    <td>Documentadora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Creacion del Informe Escrito </li>
+                            <li>Creacion del Manual Tecnico</li>
+                        </ul>
+
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -131,8 +194,13 @@
                         </div>
                     </td>
                     <td>1790-23-13545</td>
-                    <td>Ángeles Flor de María</td>
-                    <td>Corado</td>
+                    <td>Ángeles Flor de María Corado</td>
+                    <td>Documentadora</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Manual de Usuario</li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -141,8 +209,13 @@
                         </div>
                     </td>
                     <td>1790-23-21472</td>
-                    <td>Marlon Alfredo</td>
-                    <td>Álvarez Quinteros</td>
+                    <td>Marlon Alfredo Álvarez Quinteros</td>
+                    <td>Documentador</td>
+                    <td>
+                        <ul style="padding-left: 20px; margin: 0;">
+                            <li>Investigacion de los Metodos para el Informe</li>
+                        </ul>
+                    </td>
                 </tr>
             </tbody>
         </table>

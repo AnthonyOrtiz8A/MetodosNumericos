@@ -17,7 +17,6 @@
                 <p><strong>Máx. Iteraciones:</strong> @grupo.MaxIter</p>
                 <p><strong>Tolerancia:</strong> @Convert.ToDouble(grupo.Tolerancia).ToString("0.############################")</p>
                 <p><strong>Fecha:</strong> @grupo.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</p>
-                <p><strong>Raíz encontrada:</strong> @(grupo.Root?.ToString("F6") ?? "No disponible")</p>
 
                 @if (grupo.Iteraciones != null && grupo.Iteraciones.Any())
                 {
