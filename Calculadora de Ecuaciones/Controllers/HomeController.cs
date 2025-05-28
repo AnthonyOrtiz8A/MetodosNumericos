@@ -23,13 +23,11 @@ namespace Calculadora_de_Ecuaciones.Controllers
             return $"Data Source={dbPath};Version=3;";
         }
 
-        // Vista de Registro
         public ActionResult Contact()
         {
             return View();
         }
 
-        // Vista de Login
         public ActionResult Index()
         {
             return View();
@@ -155,14 +153,12 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
 
 
-        // ✅ Método para cerrar sesión
         public ActionResult Logout()
         {
-            Session.Clear(); // ✅ Elimina toda la sesión
+            Session.Clear(); 
             return RedirectToAction("Index");
         }
 
-        // Vista de Inicio tras autenticación exitosa
         public ActionResult Inicio()
         {
             if (Session["UsuarioId"] != null)

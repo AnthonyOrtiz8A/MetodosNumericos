@@ -382,9 +382,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
         private List<IteracionMuller> EjecutarMuller(double x0, double x1, double x2, double tolerance, int maxIterations, Func<double, double> function)
         {
             var iteraciones = new List<IteracionMuller>();
-            int iteracionActual = 1; // ✅ Inicializar correctamente la numeración
+            int iteracionActual = 1; 
 
-            for (int i = 1; i <= maxIterations; i++) // ✅ Comenzar en 1 en lugar de 0
+            for (int i = 1; i <= maxIterations; i++) 
             {
                 double f0 = function(x0);
                 double f1 = function(x1);
@@ -417,7 +417,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
                 iteraciones.Add(new IteracionMuller
                 {
-                    Iteracion = iteracionActual, // ✅ Aquí se asigna el número de iteración
+                    Iteracion = iteracionActual, 
                     X0 = x0,
                     X1 = x1,
                     X2 = x2,
@@ -428,7 +428,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     MargenError = margenError
                 });
 
-                iteracionActual++; // ✅ Aumentar número de iteración
+                iteracionActual++; 
 
                 if (Math.Abs(margenError) < tolerance)
                 {

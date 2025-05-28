@@ -211,7 +211,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
             {
                 conn.Open();
 
-                // ✅ Eliminar todas las iteraciones del grupo específico
                 string queryDeleteResultados = "DELETE FROM SecanteResultados WHERE GrupoId = @GrupoId;";
                 string queryDeleteGrupo = "DELETE FROM SecanteGrupo WHERE GrupoId = @GrupoId;";
 
@@ -309,7 +308,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
 
-                // Tabla de encabezado con logo y título en paralelo
                 PdfPTable headerTable = new PdfPTable(2);
                 headerTable.WidthPercentage = 100;
                 headerTable.SetWidths(new float[] { 1.3f, 3.7f }); 

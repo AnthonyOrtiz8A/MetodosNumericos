@@ -23,7 +23,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
         {
             var model = new NewtonRaphsonModel
             {
-                Mensaje = string.Empty, // ✅ Evita mostrar errores al cargar la página por primera vez
+                Mensaje = string.Empty, 
                 Iteraciones = new List<IteracionNewton>()
             };
             return View(model);
@@ -70,7 +70,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     cmdGrupo.Parameters.AddWithValue("@Funcion", model.Funcion);
                     cmdGrupo.Parameters.AddWithValue("@X0", model.X0);
                     cmdGrupo.Parameters.AddWithValue("@MaxIter", model.MaxIter);
-                    cmdGrupo.Parameters.AddWithValue("@Tolerancia", tol.ToString("0.############################")); // ✅ Guardar como decimal
+                    cmdGrupo.Parameters.AddWithValue("@Tolerancia", tol.ToString("0.############################")); 
                     cmdGrupo.Parameters.AddWithValue("@Fecha", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmdGrupo.Parameters.AddWithValue("@UsuarioId", usuarioId);
                     grupoId = Convert.ToInt32(cmdGrupo.ExecuteScalar());
@@ -173,10 +173,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                                 Tolerancia = readerGrupo.GetDouble(4),
                                 Fecha = readerGrupo.GetDateTime(5),
                                 UsuarioId = readerGrupo.GetInt32(6),
-                                Iteraciones = new List<IteracionNewton>() // ✅ Inicializar lista vacía
+                                Iteraciones = new List<IteracionNewton>() 
                             };
 
-                            // ✅ Cargar iteraciones de este grupo desde NewtonRaphsonResultados incluyendo el margen de error
                             string queryIteraciones = "SELECT Iteracion, X, FX, DFX, NextX, MargenError FROM NewtonRaphsonResultados WHERE GrupoId = @GrupoId ORDER BY Iteracion ASC";
                             using (SQLiteCommand cmdIteraciones = new SQLiteCommand(queryIteraciones, conn))
                             {

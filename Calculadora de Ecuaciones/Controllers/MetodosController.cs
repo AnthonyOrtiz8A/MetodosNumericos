@@ -8,13 +8,11 @@ namespace Calculadora_de_Ecuaciones.Controllers
 {
     public class MetodosController : Controller
     {
-        // GET: Metodos
         public ActionResult Index()
         {
             ViewBag.ActivePage = "Inicio";
             return View();
-        }        
-        
+        }         
         public ActionResult Integrantes()
         {
             ViewBag.ActivePage = "Integrantes";
@@ -29,8 +27,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
         {
             ViewBag.ActivePage = "Metodos";
             return View();
-
-
         }
     };
 }

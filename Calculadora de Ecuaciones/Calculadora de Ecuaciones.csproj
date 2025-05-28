@@ -584,7 +584,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Fotos\FlorCorado.jpg" />
+    <Content Include="Content\Fotos\Fondoparatodos.jpg" />
     <Content Include="Content\Fotos\KatherineCorado.jpg" />
+    <Content Include="Content\Fotos\Kirby.gif" />
+    <Content Include="Content\Fotos\Mario.gif" />
     <Content Include="Content\Fotos\Marlon.jpg" />
     <Content Include="Content\Fotos\Umg.png" />
     <Content Include="Content\Fotos\Yarissa.jpg" />

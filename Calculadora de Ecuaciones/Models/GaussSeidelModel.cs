@@ -17,7 +17,7 @@ namespace Calculadora_de_Ecuaciones.Models
         public string Mensaje { get; set; }
         public string TipoMensaje { get; set; }
         public double[] Solucion { get; set; }
-        public int Dimension { get; set; } // Tamaño del sistema
+        public int Dimension { get; set; }
         public DateTime Fecha { get; set; }
         public int UsuarioId { get; set; }
 
@@ -30,7 +30,7 @@ namespace Calculadora_de_Ecuaciones.Models
     {
         public int GrupoId { get; set; }
         public int Iteracion { get; set; }
-        public double[] Valores { get; set; } // Valores de x en esta iteración
+        public double[] Valores { get; set; }
         public double Error { get; set; }
         public Login Id { get; set; }
     }

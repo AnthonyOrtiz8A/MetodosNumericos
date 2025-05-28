@@ -39,6 +39,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
 
             return View(modelo);
         }
+
         [HttpPost]
         public ActionResult Calculate(GaussSeidelModel model)
         {
@@ -46,11 +47,19 @@ namespace Calculadora_de_Ecuaciones.Controllers
             {
                 model.Mensaje = "Error: Debes ingresar todos los datos requeridos.";
                 model.TipoMensaje = "error";
-                return View(model);
+                return View("Index", model);
             }
 
             int dimension = model.MatrizInput.Count;
             model.Dimension = dimension;
+
+            if (model.MatrizInput.Any(fila => fila.Count != dimension))
+            {
+                model.Mensaje = "Error: La matriz debe ser cuadrada.";
+                model.TipoMensaje = "error";
+                return View("Index", model);
+            }
+
             model.MatrizCoeficientes = new double[dimension, dimension];
             model.VectorIndependiente = new double[dimension];
             model.AproximacionInicial = new double[dimension];
@@ -65,6 +74,17 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 model.AproximacionInicial[i] = model.AproximacionInicialInput[i];
             }
 
+
+            for (int i = 0; i < dimension; i++)
+            {
+                if (model.MatrizCoeficientes[i, i] == 0)
+                {
+                    model.Mensaje = "Error: La matriz no es compatible con el método de Gauss-Seidel (cero en la diagonal).";
+                    model.TipoMensaje = "error";
+                    return View("Index", model);
+                }
+            }
+
             model.Iteraciones = new List<IteracionGaussSeidel>();
             double[] x = (double[])model.AproximacionInicial.Clone();
             double[] xPrev = new double[dimension];
@@ -77,7 +97,7 @@ namespace Calculadora_de_Ecuaciones.Controllers
             {
                 model.Mensaje = "Error: No se ha iniciado sesión.";
                 model.TipoMensaje = "error";
-                return View(model);
+                return View("Index", model);
             }
 
             int grupoId;
@@ -155,15 +175,26 @@ namespace Calculadora_de_Ecuaciones.Controllers
                     }
                 }
 
-                model.Solucion = x;
-                model.Mensaje = convergencia
-                    ? "Éxito: El método convergió a una solución dentro de la tolerancia."
-                    : "Advertencia: Se alcanzó el número máximo de iteraciones sin convergencia.";
-                model.TipoMensaje = convergencia ? "success" : "warning";
+                if (!convergencia)
+                {
+                    model.Mensaje = "Error: El método no convergió. La matriz puede no ser compatible con Gauss-Seidel.";
+                    model.TipoMensaje = "error";
+                    model.Solucion = null;
+                    model.Iteraciones = null;
+                    return View("Index", model);
+                }
+                else
+                {
+                    model.Mensaje = "Éxito: El método convergió a una solución dentro de la tolerancia.";
+                    model.TipoMensaje = "success";
+                }
 
+                model.Solucion = x;
                 return View("Index", model);
             }
         }
+
+
 
         public ActionResult Historial()
         {
@@ -215,7 +246,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
                                 Iteraciones = new List<IteracionGaussSeidel>()
                             };
 
-                            // Cargar iteraciones
                             string queryIteraciones = @"
                         SELECT Iteracion, Valores, Error 
                         FROM GaussSeidelResultados 
@@ -350,10 +380,9 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 Image logo = Image.GetInstance(imagePath);
                 logo.ScaleAbsolute(60f, 60f);
 
-                // Tabla de encabezado con logo y título en paralelo
                 PdfPTable headerTable = new PdfPTable(2);
                 headerTable.WidthPercentage = 100;
-                headerTable.SetWidths(new float[] { 1.3f, 3.7f }); // Ajuste para mover el título a la izquierda
+                headerTable.SetWidths(new float[] { 1.3f, 3.7f }); 
 
                 PdfPCell logoCell = new PdfPCell(logo);
                 logoCell.Border = Rectangle.NO_BORDER;
@@ -383,7 +412,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 PdfPTable table = new PdfPTable(grupo.Dimension + 2);
                 table.WidthPercentage = 100;
 
-                // Encabezados
                 PdfPCell cell;
                 cell = new PdfPCell(new Phrase("Iteración", FontFactory.GetFont("Arial", 11, Font.BOLD)));
                 cell.BackgroundColor = new BaseColor(230, 230, 250);
@@ -403,7 +431,6 @@ namespace Calculadora_de_Ecuaciones.Controllers
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
                 table.AddCell(cell);
 
-                // Iteraciones
                 foreach (var iter in grupo.Iteraciones)
                 {
                     table.AddCell(iter.Iteracion.ToString());

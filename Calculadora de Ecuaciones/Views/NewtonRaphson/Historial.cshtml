@@ -9,7 +9,6 @@
     {
         foreach (var grupo in Model)
         {
-            <!-- ✅ Solo mostrar cálculos del usuario actual -->
             if (grupo.UsuarioId == Convert.ToInt32(Session["UsuarioId"]))
             {
                 <div class="card mb-4 shadow-sm p-3">
@@ -42,7 +41,7 @@
                                             <td>@resultado.FX.ToString("F6")</td>
                                             <td>@resultado.DFX.ToString("F6")</td>
                                             <td>@resultado.NextX.ToString("F6")</td>
-                                            <td>@resultado.MargenError.ToString("F6")</td> <!-- ✅ Ahora se usa el valor almacenado en la BD -->
+                                            <td>@resultado.MargenError.ToString("F6")</td> 
                                         </tr>
                                     }
                                 </tbody>
@@ -76,6 +75,11 @@
 </div>
 
 <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #bbdefb;
+    }
     .logo-container img {
         width: 100px;
         margin-top: 10px;

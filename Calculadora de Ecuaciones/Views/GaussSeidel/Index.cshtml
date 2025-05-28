@@ -18,7 +18,7 @@
 
         @if (Model.Dimension > 0)
         {
-             using (Html.BeginForm("Calculate", "GaussSeidel", FormMethod.Post))
+            using (Html.BeginForm("Calculate", "GaussSeidel", FormMethod.Post))
             {
                 @Html.HiddenFor(m => m.Dimension)
 
@@ -74,14 +74,14 @@
                 </div>
             }
 
-             if (!string.IsNullOrEmpty(Model.Mensaje))
+            if (!string.IsNullOrEmpty(Model.Mensaje))
             {
-                <div class="alert @(Model.TipoMensaje == "error" ? "alert-danger" : "alert-warning") mt-4 text-center">
+                <div class="alert @(Model.TipoMensaje == "error" ? "alert-danger" : Model.TipoMensaje == "success" ? "alert-success" : "alert-warning") mt-4 text-center">
                     <strong>@Model.Mensaje</strong>
                 </div>
             }
 
-            if (Model.Iteraciones != null && Model.Iteraciones.Any())
+            if (Model.Iteraciones != null && Model.Iteraciones.Any() && Model.Solucion != null)
             {
                 <h4 class="mt-5 text-center">Iteraciones</h4>
                 <div class="table-responsive">
@@ -135,8 +135,13 @@
 </div>
 
 
-
 <style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #ffe0b2;
+    }
+
     .logo-container img {
         width: 100px;
         margin-top: 10px;
