@@ -21,7 +21,7 @@
                         <strong>Solución final:</strong>
                         @for (int i = 0; i < grupo.Solucion.Length; i++)
                         {
-                            <span>X@i = @grupo.Solucion[i].ToString("F6")</span>
+                            <span>@($"x{i} = {grupo.Solucion[i]:F6}")</span>
                             @(i < grupo.Solucion.Length - 1 ? ", " : "")
                         }
                     </p>
@@ -36,7 +36,7 @@
                                     <th>Iteración</th>
                                     @for (int i = 0; i < grupo.Iteraciones.First().Valores.Length; i++)
                                     {
-                                        <th>X@i</th>
+                                        <th>@($"x{i}")</th>
                                     }
                                     <th>Error</th>
                                 </tr>
